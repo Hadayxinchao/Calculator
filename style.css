@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightgray;
+    line-height: 1.6;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 75vh;
+    min-height: 500px;
+    padding: 10px;
+    margin-top: 50px;
+}
+.calculator {
+    width: 400px;
+    border: 2px solid;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: azure;
+}
+.result {
+    padding: 10px 20px;
+    border: 2px solid;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: right;
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    .screen-last{
+        height: 32px;
+        font-size: 20px;
+    }
+    .screen-current {
+        height: 64px;
+        font-size: 40px;
+    }
+}
+.adjust {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    button {
+        padding: 20px 50px;
+        font-size: large;
+        border: 2px solid;
+        border-radius: 5px;
+        min-width: 173px;
+    }
+    .clearBtn {
+        background-color: #faa;        
+    }
+    .clearBtn:hover{
+        background-color: #e99;
+    }
+    .clearBtn:active{
+        background-color: #d88;
+    }
+    .deleteBtn {
+        background-color: #aaf;        
+    }
+    .deleteBtn:hover{
+        background-color: #99e;
+    }
+    .deleteBtn:active{
+        background-color: #88d;
+    }
+}
+
+.digit{
+    display: flex;
+    flex-direction: column;
+    div {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+    button {
+        padding: 20px 35px;
+        font-size: 20px;
+        text-align: center;
+        border: 2px solid;
+        border-radius: 5px;
+        width: 81.5px;
+        background-color: #eee;
+    }
+    button:hover{
+        background-color: #ddd;
+    }
+    button:active{
+        background-color: #ccc;
+    }
+}

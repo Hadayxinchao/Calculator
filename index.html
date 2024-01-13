@@ -8,6 +8,44 @@
     <script src="external.js" defer></script>
 </head>
 <body>
-    <h1>Calculator</h1>
+    <main class="main">
+        <div class="calculator">
+            <div class="result">
+                <div class="screen-last"></div>
+                <div class="screen-current">0</div>  
+            </div>
+            <div class="adjust">
+                <button value="CLEAR" class="clearBtn">CLEAR</button>
+                <button value="DELETE" class="deleteBtn">DELETE</button>
+            </div>
+            <div class="digit">
+                <div class="row-1">
+                    <button value="7" class="numberBtn">7</button>
+                    <button value="8" class="numberBtn">8</button>
+                    <button value="9" class="numberBtn">9</button>
+                    <button value="÷" class="operatorBtn">÷</button>
+                </div>
+                <div class="row-2">
+                    <button value="4" class="numberBtn">4</button>
+                    <button value="5" class="numberBtn">5</button>
+                    <button value="6" class="numberBtn">6</button>
+                    <button value="×" class="operatorBtn">×</button>
+                </div>
+                <div class="row-3">
+                    <button value="1" class="numberBtn">1</button>
+                    <button value="2" class="numberBtn">2</button>
+                    <button value="3" class="numberBtn">3</button>
+                    <button value="-" class="operatorBtn">-</button>
+                </div>
+                <div class="row-4">
+                    <button value="." id="dotBtn">.</button>
+                    <button value="0" class="numberBtn">0</button>
+                    <button value="=" id="equalBtn">=</button>
+                    <button value="+" class="operatorBtn">+</button>
+                </div>
+                
+            </div>
+        </div>
+    </main>
 </body>
 </html>
