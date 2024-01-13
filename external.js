@@ -5,11 +5,17 @@ let operators = {
     "÷": (a, b) => a / b,
 }
 function operate(){
-    let split = screenLast.textContent.split(" ").slice(0, 3);
+    let inputText = `${screenLast.textContent}${screenCurrent.textContent} =`;
+    let split = inputText.split(" ").slice(0, 3);
     let firstNumber = +split[0];
     let operator = split[1];
     let secondNumber = +split[2];
-    return Math.round(operators[operator](firstNumber, secondNumber) * 10) / 10;
+    result = operators[operator](firstNumber, secondNumber)
+    if (result == "Infinity") {
+        alert("Error, you can't divide by 0!");
+        return false;
+    }
+    return Math.round(result * 10) / 10;
 }
 function addDigit(number){
     if (screenLast.textContent.slice(-1) in operators){
@@ -33,13 +39,19 @@ function addOperator(operator){
     if (screenLast.textContent.slice(-1) === "="){
         screenLast.textContent = `${screenCurrent.textContent} ${operator}`
     }
-    
+
     screenLast.textContent = `${screenCurrent.textContent} ${operator}`
 }
 
 function printResult(){
-    screenLast.textContent += `${screenCurrent.textContent} =`;
-    screenCurrent.textContent = operate();
+    if (screenLast.textContent.slice(-1) === "="){
+        return 0;
+    }
+    if (operate()){
+        screenLast.textContent += `${screenCurrent.textContent} =`;
+        screenCurrent.textContent = operate();
+    }
+
 }
 
 const numberBtn = document.querySelectorAll(".numberBtn")
@@ -90,6 +102,9 @@ document.addEventListener("keydown", (e) => {
     }
     else if (e.key === "*"){
         addOperator("×");
+    }
+    else if (e.key === "/"){
+        addOperator("÷");
     }
     else if (e.key === "Enter"){
         printResult();
